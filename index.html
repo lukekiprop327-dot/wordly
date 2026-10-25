@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordly - Interactive Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons (audio & search) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-book-open-reader"></i> Wordly</h1>
+            <p>Your interactive, single-page dictionary experience.</p>
+        </header>
+
+        <!-- Search Form -->
+        <main>
+            <form id="search-form" class="search-form" aria-label="Dictionary Search">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="word-input" 
+                        placeholder="Search for a word (e.g., serendipity)..." 
+                        autocomplete="off"
+                        required
+                        aria-label="Word search input"
+                    >
+                </div>
+                <button type="submit" id="search-btn">Search</button>
+            </form>
+
+            <!-- Error Message Container -->
+            <div id="error-message" class="error-message hidden" role="alert"></div>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Searching for definition...</p>
+            </div>
+
+            <!-- Results Section -->
+            <section id="results-container" class="results-container hidden">
+                <div class="word-header">
+                    <div>
+                        <h2 id="result-word">Word</h2>
+                        <span id="result-phonetic" class="phonetic">/phonetic/</span>
+                    </div>
+                    <button id="audio-btn" class="audio-btn hidden" aria-label="Play pronunciation audio">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+
+                <div id="meanings-container" class="meanings-container">
+                    <!-- Dynamic part of speech and definitions injected here -->
+                </div>
+
+                <div id="source-container" class="source-container">
+                    <p>Source: <a href="#" id="source-link" target="_blank" rel="noopener noreferrer">Free Dictionary API</a></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
